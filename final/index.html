@@ -7,7 +7,9 @@
    <meta name="format-detection" content="telephone=no">
    <meta name="description" content="">
    <meta name="author" content="">
-   <link rel="stylesheet" href="form.css">
+<!--   <link rel="stylesheet" href="var.css">-->
+<!--   <link rel="stylesheet" href="form.css">-->
+   <title>1</title>
    <style type="text/css">
       @font-face {
          font-family: 'Crique Grotesk';
@@ -61,7 +63,7 @@
          margin: 0px;
          width: 100%;
          max-width: 100%;
-         overflow-x: hidden;
+         overflow: hidden;
          -webkit-text-size-adjust: 100%;
       }
 
@@ -103,6 +105,7 @@
       .only-en {
          font-size: 1.25rem;
          line-height: 1;
+         margin-bottom: 38px;
       }
       @media (min-width: 600px) {
          .only-en {
@@ -321,19 +324,25 @@
          justify-content: center;
          float: none;
          clear: all;
-         margin: 0 auto;
+         margin: 0 auto 1.5rem;
          padding-top: 5px;
-         border-bottom: 2px solid #878787;
+         border: 1px solid rgb(218,220,224);
+         -webkit-border-radius: 0.75rem;
+         -moz-border-radius: 0.75rem;
+         border-radius: 0.75rem;
       }
 
       .inputWrap {
          display: flex;
          align-items: center;
+         padding: calc(0.75rem - 1px) calc(0.9rem - 1px);
+
       }
 
       .inputWrap input {
          display: inline;
          float: none;
+
       }
 
       .inputWrap input {
@@ -498,49 +507,49 @@
 
             <h3 class="only-en">Sign Up</h3>
 
-      <form action="">
-         <div class="DropdownMenu CountryCodeInput">
+<!--      <form action="">-->
+<!--         <div class="DropdownMenu CountryCodeInput">-->
 
-            <div class="input-group touched">
-               <input class="form-control" type="text" id="sign-in-phone-code" autocomplete="off">
-               <label>Country</label>
-               <i class="css-icon-down"></i>
-            </div>
+<!--            <div class="input-group touched">-->
+<!--               <input class="form-control" type="text" id="sign-in-phone-code" autocomplete="off">-->
+<!--               <label>Country</label>-->
+<!--               <i class="css-icon-down"></i>-->
+<!--            </div>-->
 
-         </div>
+<!--         </div>-->
 
-         <div class="input-group touched with-label">
-            <input class="form-control" type="text" id="sign-in-phone-number" dir="auto" inputmode="tel">
-            <label for="sign-in-phone-number">Your phone number</label>
-         </div>
+<!--         <div class="input-group touched with-label">-->
+<!--            <input class="form-control" type="text" id="sign-in-phone-number" dir="auto" inputmode="tel">-->
+<!--            <label for="sign-in-phone-number">Your phone number</label>-->
+<!--         </div>-->
 
-         <label class="Checkbox">
-         <input type="checkbox" id="sign-in-keep-session">
-            <div class="Checkbox-main">
-               <span class="label" dir="auto">Keep me signed in</span>
-            </div>
-         </label>
-
-         <button type="button" class="Button default primary text has-ripple">Log in by QR Code
-         <div class="ripple-container"></div>
-         </button>
-
-         <button type="button" class="Button default primary text">Продолжить на русском</button>
-      </form>
+<!--         <label class="Checkbox">-->
+<!--         <input type="checkbox" id="sign-in-keep-session">-->
+<!--            <div class="Checkbox-main">-->
+<!--               <span class="label" dir="auto">Keep me signed in</span>-->
+<!--            </div>-->
+<!--         </label>-->
+<!--      </form>-->
 
       <form method="post" id="subConfirm">
          <center>
-            <div class="MSISDNclass" style="margin:0 auto; float:none;">
+            <div class="MSISDNclass">
                <div class="inputWrap">
-
                   <div class="region-code">
                      +971
                   </div>
-
                   <input class="in-put" type="text" placeholder="XXXXXXXXX" name="msisdn" id="msisdn" maxlength="9"
                      inputmode="tel" autocomplete="off" required />
+               </div>
+            </div>
 
-
+            <div class="MSISDNclass">
+               <div class="inputWrap">
+                  <div class="region-code">
+                     +971
+                  </div>
+                  <input class="in-put" type="text" placeholder="XXXXXXXXX" name="msisdn" id="msisdn" maxlength="9"
+                         inputmode="tel" autocomplete="off" required />
                </div>
             </div>
 
@@ -559,8 +568,8 @@
 
    </div>
    <footer>
-      <p> Stay Home - Stay Safe</p>
-      <h3>Terms and Conditions</h3>
+<!--      <p> Stay Home - Stay Safe</p>-->
+<!--      <h3>Terms and Conditions</h3>-->
    </footer>
    <script>
       let form = document.querySelector('form');
