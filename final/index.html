@@ -1,0 +1,623 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="format-detection" content="telephone=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <link rel="stylesheet" href="form.css">
+   <style type="text/css">
+      @font-face {
+         font-family: 'Crique Grotesk';
+         src: local('Crique Grotesk Medium'), local('Crique-Grotesk-Medium'),
+         url('CriqueGrotesk-Medium.woff2') format('woff2'),
+         url('CriqueGrotesk-Medium.woff') format('woff'),
+         url('CriqueGrotesk-Medium.ttf') format('truetype');
+         font-weight: 500;
+         font-style: normal;
+      }
+
+      * {
+         box-sizing: border-box;
+      }
+      *, *::before, *::after {
+         box-sizing: border-box;
+      }
+
+      html {
+         color: rgb(0,0,0);
+         font-family: 'Crique Grotesk';
+         font-size: 14px;
+         text-align: center;
+         min-height: 100%;
+         margin: 0 auto;
+         width: 100%;
+         max-width: 100%;
+         overflow-x: hidden;
+         /*background: linear-gradient(#2096e9 0%, white 40%);*/
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+         margin-top: 0;
+         margin-bottom: 0.5rem;
+         font-weight: 500;
+      }
+
+      footer span {
+         color: #000;
+         font-weight: 700;
+      }
+
+      header {
+         position: relative;
+         max-width: 640px;
+         padding: 0 10px;
+         margin: 0 auto;
+      }
+
+      body {
+         margin: 0px;
+         width: 100%;
+         max-width: 100%;
+         overflow-x: hidden;
+         -webkit-text-size-adjust: 100%;
+      }
+
+      /*footer {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         padding: 5px 0;
+         width: 100%;
+         background: rgba(255, 255, 255, 0.5);
+         font-size: 10px;
+         color: #000;
+         text-align: center;
+         font-size: 0.72em;
+         }*/
+
+      footer h3 {
+         text-decoration: underline;
+         font-size: 1.3em;
+         color: #878787;
+         font-weight: 100 !important;
+         letter-spacing: 0px;
+      }
+
+      p {
+         font-size: 1.3em;
+         color: #878787;
+         font-weight: 700;
+         letter-spacing: 0px;
+      }
+
+
+
+      .in-put::placeholder {
+         color: #a3a3a3 !important;
+      }
+
+
+      .only-en {
+         font-size: 1.25rem;
+         line-height: 1;
+      }
+      @media (min-width: 600px) {
+         .only-en {
+            font-size: 2rem;
+            line-height: 1.5;
+         }
+      }
+
+
+      /*#subConfirm h3 {
+         text-decoration: underline;
+         font-size: 1.6em;
+         color: #878787;
+         font-weight: 100;
+         }*/
+      .multi-language {
+         position: absolute;
+         display: block;
+         top: 0;
+         right: 20px;
+         z-index: 3;
+      }
+
+      .multi-language .list {
+         display: inline-block;
+         font-size: 14px;
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         text-align: center;
+      }
+
+      .multi-language .list li {
+         display: inline-block;
+         cursor: pointer;
+         color: #fff;
+         margin: 0;
+         border-top: none;
+         text-align: center
+      }
+
+      .multi-language img {
+         width: 12px;
+         margin-left: 5px;
+         padding-bottom: 1px;
+      }
+
+      .top {
+         position: relative;
+         width: 100%;
+         margin-top: -16px;
+         /*background-image: linear-gradient(#79e0e1 0%, #fff 100%);*/
+         padding-bottom: 15px;
+      }
+
+      .main-img {
+         width: 35%;
+         max-width: 288px;
+         margin: 0 auto;
+         padding-top: 10vh;
+      }
+
+      /* .current {
+         border-top: none;
+         background-color: rgba(235, 102, 84, 1);
+         color: #ffffff !important;
+         text-decoration: none !important;
+         width: 40px;
+         text-align: center
+         } */
+      .only-ar,
+      .only-en {
+         display: block;
+         font-weight: 700;
+      }
+
+      h3 {
+         /*color: #ff5d10;*/
+         /*font-size: 1.6em;*/
+         /*margin: 0;*/
+         /*font-weight: 400 !important;*/
+      }
+
+      h4 {
+         color: #ff5d10;
+         font-size: 1.8em;
+         margin: 0;
+         font-weight: 400 !important;
+         width: 300px;
+      }
+
+      .error {
+         color: red;
+      }
+
+      .flag {
+         width: 40px;
+         margin: 0 5px;
+      }
+
+      .region-code {
+         margin: 0;
+         display: flex;
+         align-items: center;
+         font-size: 25px;
+         margin: 0 10px 0 10px;
+      }
+
+      .region-code img {
+         width: 10px;
+      }
+
+      .inputWrap input {
+         outline: none;
+         font-size: 16px;
+         border-bottom: 1px solid #c4c8cb;
+
+      }
+
+      .inputWrap img {
+         margin-left: 8%;
+      }
+
+      .bullets-ar {
+         display: block;
+         text-align: right
+      }
+
+      .bullets-en {
+         display: block;
+         text-align: left
+      }
+
+      .optionAr {
+         font-family: Verdana, sans-serif
+      }
+
+      .price-info {
+         padding-top: 20px
+      }
+
+      a,
+      a:link {
+         color: #000;
+         text-decoration: underline
+      }
+
+      a:visited {
+         color: #000;
+         text-decoration: none
+      }
+
+      ul {
+         list-style-type: none;
+         text-align: left
+      }
+
+      .bullet-ar {
+         text-align: right
+      }
+
+      .bullet-en {
+         text-align: left
+      }
+
+      .buttons {
+         flex: 1 1 auto;
+         font-size: 20px;
+         transition: 0.5s;
+         color: #fff;
+         font-size: 25px;
+         font-weight: bold;
+         background: #4dc3ff;
+         padding: 15px;
+         /*width: 55%;*/
+         width: 288px;
+         border: none;
+         border-radius: 15px;
+         outline: none;
+         text-transform: uppercase;
+         margin: 1em 0 0 0;
+      }
+
+      .buttons span {
+         top: 0;
+         padding: 0;
+         margin: 0;
+         transform: translateY(2px);
+         line-height: 38px;
+         font-weight: 100;
+         font-size: 1.1em;
+         font-family: 'Crique Grotesk';
+      }
+
+      .buttonText {
+         padding: 10px 0;
+      }
+
+      .cancel {
+         flex: 1 1 auto;
+         font-size: 20px;
+         transition: 0.5s;
+         color: #fff;
+         background-color: #000;
+         padding: 5px;
+         width: 80px;
+         border: none;
+         border-radius: 50px;
+         outline: none
+      }
+
+      .MSISDNclass {
+         width: 288px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         float: none;
+         clear: all;
+         margin: 0 auto;
+         padding-top: 5px;
+         border-bottom: 2px solid #878787;
+      }
+
+      .inputWrap {
+         display: flex;
+         align-items: center;
+      }
+
+      .inputWrap input {
+         display: inline;
+         float: none;
+      }
+
+      .inputWrap input {
+         border-radius: 10px;
+         /*text-align: center;*/
+         height: 30px;
+         width: 100%;
+         outline: none;
+         border: none;
+         font-family: inherit;
+         font-size: 25px;
+         font-weight: 500;
+         color: #000;
+         background-color: transparent;
+      }
+
+      .inputWrap input::-webkit-input-placeholder {
+         color: #bebebe;
+      }
+
+      .inputWrap input::-moz-placeholder {
+         color: #bebebe;
+      }
+
+      .inputWrap input:-ms-input-placeholder {
+         color: #bebebe;
+      }
+
+      .inputWrap input::-ms-input-placeholder {
+         color: #bebebe;
+      }
+
+      .inputWrap input::placeholder {
+         color: #bebebe;
+         font-size: 24px;
+      }
+
+      img {
+         max-width: 35px;
+      }
+
+      .container {
+         max-width: 640px;
+         padding: 0 10px;
+         position: relative;
+         margin: 0 auto
+      }
+
+      #disclaimer {
+         text-align: left;
+         z-index: 1;
+      }
+
+      #disclaimer ul {
+         padding: 0;
+         text-align: center;
+      }
+
+      #disclaimer a {
+         color: inherit;
+      }
+
+      @media screen and (max-width: 319px) {
+
+         h3,
+         h4 {
+            font-size: 1.4em;
+            width: 100%;
+         }
+
+         .buttons {
+            width: 100%;
+         }
+
+         .subConfirm,
+         .MSISDNclass {
+            width: 100%;
+         }
+
+         .region-code {
+            margin: 0 0 0 10px;
+            font-size: 1.3em;
+         }
+
+         .inputWrap input {
+            font-size: 1.6em;
+         }
+      }
+
+      @media (orientation: landscape) {
+         .main-img {
+            width: 55vh;
+         }
+      }
+
+      @media screen and (min-width: 768px) {
+         .container .main-img {
+            display: inherit;
+         }
+      }
+
+      @media screen and (orientation: landscape) and (max-height: 640px) {
+         .top {
+            height: 0;
+            margin: 0 auto;
+            position: absolute;
+         }
+
+         .inputWrap input {
+            background-color: #0000 !important;
+         }
+
+         .container .main-img {
+            display: none;
+         }
+
+         .container {
+            margin: 20vh auto 0 auto;
+         }
+
+         .MSISDNclass {
+            padding-top: 0;
+            margin: 2em;
+         }
+
+         #subConfirm p {
+            margin: 2em;
+         }
+      }
+
+      @media (orientation: landscape) and (max-height: 370px) {
+         .container {
+            margin-top: 5vh;
+         }
+      }
+
+      @media (orientation: landscape) and (max-height: 310px) {
+         .MSISDNclass {
+            margin: 0;
+         }
+
+         .buttons {
+            margin-top: 10px;
+         }
+
+         p {
+            margin: 5px 0;
+         }
+      }
+   </style>
+</head>
+<header></header>
+
+<body>
+   <div class="top">
+      <div class="container">
+         <img class="main-img" src="./images/1.png" />
+      </div>
+   </div>
+   <center></center>
+   <div class="container">
+
+            <h3 class="only-en">Sign Up</h3>
+
+      <form action="">
+         <div class="DropdownMenu CountryCodeInput">
+
+            <div class="input-group touched">
+               <input class="form-control" type="text" id="sign-in-phone-code" autocomplete="off">
+               <label>Country</label>
+               <i class="css-icon-down"></i>
+            </div>
+
+         </div>
+
+         <div class="input-group touched with-label">
+            <input class="form-control" type="text" id="sign-in-phone-number" dir="auto" inputmode="tel">
+            <label for="sign-in-phone-number">Your phone number</label>
+         </div>
+
+         <label class="Checkbox">
+         <input type="checkbox" id="sign-in-keep-session">
+            <div class="Checkbox-main">
+               <span class="label" dir="auto">Keep me signed in</span>
+            </div>
+         </label>
+
+         <button type="button" class="Button default primary text has-ripple">Log in by QR Code
+         <div class="ripple-container"></div>
+         </button>
+
+         <button type="button" class="Button default primary text">Продолжить на русском</button>
+      </form>
+
+      <form method="post" id="subConfirm">
+         <center>
+            <div class="MSISDNclass" style="margin:0 auto; float:none;">
+               <div class="inputWrap">
+
+                  <div class="region-code">
+                     +971
+                  </div>
+
+                  <input class="in-put" type="text" placeholder="XXXXXXXXX" name="msisdn" id="msisdn" maxlength="9"
+                     inputmode="tel" autocomplete="off" required />
+
+
+               </div>
+            </div>
+
+            <input type="hidden" name="lang" value="en" />
+         </center>
+         <center>
+            <button id="confirm" class="buttons" type="submit" name="confirm">
+               <span class="only-en">NEXT</span>
+            </button>
+            <p class="error"></p>
+         </center>
+      </form>
+
+
+
+
+   </div>
+   <footer>
+      <p> Stay Home - Stay Safe</p>
+      <h3>Terms and Conditions</h3>
+   </footer>
+   <script>
+      let form = document.querySelector('form');
+      let input = document.querySelector('input[type=text]');
+      
+      input.oninput = () => {
+         input.value = input.value.replace(/[^0-9]/, '');
+
+         if (input.value.substr(0, 2) === '05') {
+            input.setAttribute('maxlength', '10');
+         } else if (input.value.substr(0, 3) === '971') {
+            input.setAttribute('maxlength', '12');
+         } else {
+            input.setAttribute('maxlength', '9');
+         }
+      }
+
+      form.onsubmit = (e) => {
+         e.preventDefault();
+
+         let inputArray = input.value.split('');
+         let inputArrayUnique = unique(inputArray);
+
+         if (inputArrayUnique.length < 5 || input.value.indexOf('12345') > -1) {
+            phoneError();
+            return;
+         }
+         
+         document.querySelector('button[type=submit]').setAttribute('disabled', 'disabled');
+         form.submit();
+      }
+
+      function unique(array) {
+         let unique = [];
+
+         array.forEach(el => {
+               if (!unique.includes(el)) {
+                  unique.push(el);
+               }
+         });
+
+         return unique;
+      }
+
+      function phoneError() {
+         document.querySelector('.error').innerHTML = 'Check your number format and try again';
+      }
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function(){
+         $('input[type=text]').bind("paste",function(e) {
+            e.preventDefault();
+         });
+      });
+  </script>
+</body>
+
+</html>
