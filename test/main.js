@@ -4,22 +4,24 @@ $( document ).ready(function() {
 
 
 
+    $(".backdrop").click(function() {
+        console.log('click')
+        // $(".backdrop").attr("style", "display:none");
+    });
+
     $(".DropdownMenu").click(function() {
         if (!$(".DropdownMenu").hasClass("open shown")) {
             $(".menu-container").addClass( "open shown" );
-            $(".backdrop").css("display", "block");
+            $(".backdrop").attr("style", "display:block");
+            // $(".backdrop").css("display", "block");
+            $(".css-icon-down").addClass("open");
+            $('.form-control').addClass("focus");
         }
-        // else {
-        //     $(".menu-container").removeClass( "open shown" );
-        //     $(".backdrop").css("display", "none");
-        // }
     });
-
-    $(".backdrop").click(function() {
-        $(".backdrop").css("display", "none");
-    });
-
 });
+
+
+
 
 // const input = document.querySelector('.form-control');
 // const backDrop = document.querySelector('.backDrop');
