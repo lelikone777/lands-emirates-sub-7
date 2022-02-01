@@ -779,7 +779,7 @@ body.has-open-dialog .Menu .bubble {
 @media (hover: hover) {
   .MenuItem:hover,
   .MenuItem:focus {
-    background-color: var(--color-chat-hover);
+    /*background-color: var(--color-chat-hover);*/
     text-decoration: none;
     color: inherit;
   }
@@ -792,7 +792,7 @@ body.has-open-dialog .Menu .bubble {
     color: inherit;
   }
   .MenuItem:active {
-    background-color: var(--color-chat-hover);
+    /*background-color: var(--color-chat-hover);*/
   }
 }
 .MenuItem i {
@@ -817,7 +817,7 @@ body.has-open-dialog .Menu .bubble {
   color: inherit;
 }
 .MenuItem:not(.has-ripple):not(.disabled):active {
-  background-color: var(--color-item-active);
+  /*background-color: var(--color-item-active);*/
   transition: none !important;
 }
 .MenuItem > .Switcher {
@@ -1980,22 +1980,7 @@ template {
   position: relative;
   margin-bottom: 1.5rem;
 }
-.input-group label {
-  display: block;
-  padding: 0 0.25rem;
-  position: absolute;
-  left: 0.75rem;
-  top: 0.95rem;
-  background-color: var(--color-background);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--color-placeholders);
-  transition: transform 0.15s ease-out, color 0.15s ease-out;
-  cursor: text;
-  pointer-events: none;
-  transform-origin: left center;
-  white-space: nowrap;
-}
+
 .input-group.with-arrow::after {
   content: "";
   position: absolute;
@@ -2012,7 +1997,7 @@ template {
 .input-group.success label,
 .input-group .form-control:focus + label,
 .input-group .form-control.focus + label {
-  transform: scale(0.75) translate(-0.5rem, -2.25rem);
+  /*transform: scale(0.75) translate(-0.5rem, -2.25rem);*/
 }
 .input-group input::placeholder,
 .input-group .form-control::placeholder {

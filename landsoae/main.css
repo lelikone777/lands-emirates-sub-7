@@ -1,0 +1,67 @@
+.form-control {
+    padding: 0.3rem 1rem;
+}
+
+.MenuItem {
+    line-height: inherit;
+}
+
+.CountryCodeInput .country-flag {
+    margin-right: 1rem;
+}
+
+#sign-in-phone-number {
+    padding-left: 4rem;
+}
+
+.region-code {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    height: 54px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    transition: .2s opacity;
+    visibility: hidden;
+}
+
+.btn-color-primary {
+    background: #3390ec;
+    /*background: var(--primary-color);*/
+    color: #fff;
+}
+
+.input-group label {
+    display: block;
+    padding: 0 0.25rem;
+    position: absolute;
+    left: 0.75rem;
+    top: 0.95rem;
+    background-color: var(--color-background);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-placeholders);
+    transform: scale(0.75) translate(-0.5rem, -2.25rem);
+    /*transition: transform 0.15s ease-out, color 0.15s ease-out;*/
+    cursor: text;
+    pointer-events: none;
+    transform-origin: left center;
+    white-space: nowrap;
+}
+
+.error {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    margin-bottom: 2.5rem;
+    color: var(--color-text-secondary);
+}

